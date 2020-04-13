@@ -9,6 +9,7 @@ export function reducer(state, event) {
     fetch_data,
     fetch_init,
     changed_note,
+    update_main_note,
   } = types;
   const { type } = event;
 
@@ -18,25 +19,47 @@ export function reducer(state, event) {
 
     case back:
       return { ...state, view: "list" };
-    case update:
+    case update: {
       const { newText } = event;
 
       const { id, input } = newText;
       const { listData } = state;
       let newList = listData.map((note, i) => {
         if (i === id) {
-          return { text: input, id: i };
+          return { ...note, text: input, id: i };
         }
         return note;
       });
 
       return { ...state, listData: newList, status: "updating", view: "list" };
+    }
+    case update_main_note: {
+      const { listData } = state;
+      const { data } = event;
+      const { id, input } = data;
+      console.log(id, input);
+
+      const newList = listData.map((note, i) => {
+        if (i === id) {
+          return { ...note, mainText: input };
+        }
+        return note;
+      });
+
+      return {
+        ...state,
+        listData: newList,
+        status: "updating",
+        view: "list",
+      };
+    }
+
     case add_note:
       return {
         ...state,
         listData: [
           ...state.listData,
-          { text: "placeholder", id: state.listData.length },
+          { text: "placeholder", id: state.listData.length, mainText: "" },
         ],
         status: "updating",
       };

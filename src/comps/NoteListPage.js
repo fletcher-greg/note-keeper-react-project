@@ -1,4 +1,5 @@
 import React from "react";
+import "./List.scss";
 import usePost from "../hooks/usePost";
 import Loader from "./MiniComps/Loader";
 import NoteListContainer from "./MiniComps/NoteListContainer";
@@ -9,7 +10,15 @@ export default function NoteListPage({ state, send }) {
   const noteListProps = { listData, send }; // set props for child component -> NoteListContainer
 
   if (state) {
-    return <NoteListContainer {...noteListProps} />;
+    return (
+      <div className="ListPage">
+        <NoteListContainer {...noteListProps} />
+      </div>
+    );
   }
-  return <Loader />;
+  return (
+    <div className="ListPage">
+      <Loader />
+    </div>
+  );
 }

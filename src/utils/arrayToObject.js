@@ -4,17 +4,18 @@ export default function getData(list, id) {
   // overkill but fun
 
   let object = list.reduce((acc, curr, i) => {
-    const { text, id } = curr;
+    const { text, id, mainText } = curr;
 
     acc[id] = {
       text: text,
+      mainText: mainText,
     };
     return acc;
   }, {});
 
   let data = object[id];
 
-  let result = { text: data.text, id: id };
+  let result = { text: data.text, id: id, mainText: data.mainText };
 
   return result;
 }

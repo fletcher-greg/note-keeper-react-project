@@ -1,0 +1,118 @@
+.NoteDetail {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.GridParent {
+  display: grid;
+  grid-template-columns:
+    minmax(50px, 100px)
+    minmax(400px, 3fr) minmax(200px, 1fr);
+}
+
+// =========================
+// SideBar
+.ExitButtonParent {
+  justify-self: center;
+  button {
+    background: none;
+    outline: none;
+    appearance: none;
+    border: none;
+  }
+  svg {
+    fill: red;
+    height: 44px;
+    width: 44px;
+  }
+}
+
+// ----------------------------
+// Sidebar
+//    Buttons
+
+// =========================
+// NoteInput
+
+// =========================
+// NoteInput
+//   Title
+
+.NoteTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .Save,
+  .Remove {
+    appearance: none;
+    outline: none;
+    border: none;
+    padding: 0.4em 0.8em;
+    font-size: 1.05rem;
+  }
+  .Save {
+    background: #574b90;
+  }
+  .Remove {
+    background: #fc85ae;
+  }
+}
+
+.NoteTitle-Input {
+  padding: 1em 1.4em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  min-width: 70%;
+}
+
+// =========================
+// NoteInput
+//   MainInput
+
+.MainNoteParent {
+  height: 30vh;
+  display: grid;
+  grid-template-rows: 1fr 100px;
+  max-width: 70%;
+  textarea {
+    min-width: 70%;
+    height: 90%;
+    border-radius: 5px;
+    appearance: none;
+    outline: none;
+    border: none;
+    padding: 1em;
+    font-size: 1rem;
+  }
+
+  div {
+    justify-self: flex-start;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    .ExitBtn,
+    .SaveBtn {
+      outline: none;
+      appearance: none;
+      border: none;
+      padding: 0.5em 0.8em;
+      font-size: 1rem;
+    }
+
+    .SaveBtn {
+      align-self: center;
+    }
+
+    .ExitBtn {
+      background: none;
+      align-self: center;
+
+      svg {
+        width: 44px;
+        height: 44px;
+      }
+    }
+  }
+}
