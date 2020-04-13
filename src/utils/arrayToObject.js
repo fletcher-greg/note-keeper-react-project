@@ -15,7 +15,5 @@ export default function getData(list, id) {
 
   let data = object[id];
 
-  let result = { text: data.text, id: id, mainText: data.mainText };
-
-  return result;
+  return { text: data.text, id: id, mainText: data.mainText };
 }
