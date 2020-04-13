@@ -1,4 +1,16 @@
 .ListPage {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+
+.Note {
+  cursor: pointer;
+  border: 2px solid gold;
+  max-width: 300px;
+  height: max-content;
+  margin: 0 auto;
 }

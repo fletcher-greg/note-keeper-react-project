@@ -1,5 +1,5 @@
 import React from "react";
-
+import formatText from "../utils/formatText";
 export default function NoteListContainer({ listData, send }) {
   return (
     <div className="NoteList">
@@ -10,7 +10,7 @@ export default function NoteListContainer({ listData, send }) {
             onClick={() => send({ type: "open", id: i })}
             key={i}
           >
-            <p>{text}</p>
+            <p>{formatText(text, 8)}</p>
           </div>
         ))}
 

@@ -1,8 +1,8 @@
 import React from "react";
 import "./List.scss";
 import usePost from "../hooks/usePost";
-import Loader from "./MiniComps/Loader";
-import NoteListContainer from "./MiniComps/NoteListContainer";
+import Loader from "./MiniComps/NoteListContainer/components/Loader";
+import NoteListContainer from "./MiniComps/NoteListContainer/index";
 export default function NoteListPage({ state, send }) {
   usePost(state, send, state.listData.length); // get post data from api
 

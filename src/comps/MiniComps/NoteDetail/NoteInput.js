@@ -3,25 +3,13 @@ import Input from "./Input";
 import { Cross } from "../../../assets/minComps/svgs";
 import { types } from "../../../store/types";
 const { update_main_note } = types;
-export default function NoteInput({
-  noteData,
-  input,
-  toggle,
-  setInput,
-  send,
-  id,
-}) {
-  const titleProps = { noteData, input, toggle, setInput, send, id };
-
-  return (
-    <div className="NoteInputParent">
-      <NoteTitle {...titleProps} />
-      <MainNote mainText={noteData.mainText} send={send} id={id} />
-    </div>
-  );
+export default function NoteInput({ children }) {
+  return <div className="NoteInputParent">{children}</div>;
 }
 
-function NoteTitle({ input, toggle, setInput, send, id }) {
+export function NoteTitle({ toggle, text, send, id }) {
+  // capture user input
+  const [input, setInput] = useState(() => text);
   return (
     <div className="NoteTitle">
       <Input input={input} setInput={setInput} />
@@ -45,7 +33,7 @@ function NoteTitle({ input, toggle, setInput, send, id }) {
   );
 }
 
-function MainNote({ mainText, send, id }) {
+export function MainNote({ mainText, send, id }) {
   console.log(mainText);
   const [input, setInput] = useState(() => mainText);
   return (

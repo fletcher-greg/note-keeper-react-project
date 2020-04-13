@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import usePost from "../hooks/usePost";
-import Loader from "./MiniComps/Loader";
+import Loader from "./MiniComps/NoteListContainer/components/Loader";
 import useObjectToArray from "../utils/useObjectToArray";
 // import NoteDetail from "./MiniComps/NoteDetail";
 import NoteDetail from "./MiniComps/NoteDetail/index";
