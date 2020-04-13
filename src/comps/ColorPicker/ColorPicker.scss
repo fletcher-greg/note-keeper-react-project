@@ -1,0 +1,26 @@
+.Picker {
+  height: 20em;
+  width: 20em;
+  position: fixed;
+  top: 74px;
+  right: 0;
+  background: white;
+  z-index: 10;
+  animation: colorPickerEntrance 1800ms cubic-bezier(0.8, 0, 0.2, 1) forwards;
+
+  @keyframes colorPickerEntrance {
+    0% {
+      opacity: 0;
+      transform: scaleY(0.9);
+    }
+
+    15% {
+      opacity: 0;
+      transform: scaleY(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+}

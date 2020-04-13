@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NoteDetail.scss";
-// import SideBar from "./SideBar";
-// import NoteInput from "./NoteInput";
-// import { NoteTitle } from "./NoteInput";
-// import { MainNote } from "./NoteInput";
-// import useButtonColor from "../../../utils/useButtonColor";
+
 export default function NoteDetail({ children }) {
   return (
     <div className="NoteDetail">

@@ -1,17 +1,19 @@
 import React from "react";
 import "./Nav.scss";
-export default function Nav() {
+import ColorPicker from "../ColorPicker";
+export default function Nav({ toggle }) {
   return (
     <div className="NavParent">
       <nav className="NavWrapper">
         <div className="NavTitle">Note Keep</div>
         <ul>
-          <li>Settings</li>
+          <li onClick={toggle}>Colour Settings</li>
           <li>Nav Item</li>
           <li>Nav Item</li>
           <li>Nav Item</li>
         </ul>
       </nav>
+      <ColorPicker />
     </div>
   );
 }

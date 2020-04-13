@@ -6,8 +6,8 @@ import MainNote from "./MiniComps/NoteDetail/MainNote";
 import SideBar from "./MiniComps/NoteDetail/SideBar";
 import Loader from "./MiniComps/NoteListContainer/components/Loader";
 import useObjectToArray from "../utils/useObjectToArray";
-
 import NoteDetail from "./MiniComps/NoteDetail/index";
+
 export default function NotePage({ id, state, send }) {
   const { text, mainText, loading } = useObjectToArray(state, id); // get data from api
   usePost(state, send, state.status); // update post when changing text

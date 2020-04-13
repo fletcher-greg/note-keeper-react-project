@@ -18,8 +18,26 @@ body,
   height: 100%;
   width: 100%;
 }
+:root {
+  --degree: 306deg;
+
+  --color1: #ff5733;
+  --color2: #0c2fba;
+  --percent1: 0%;
+  --percent2: 100%;
+
+  --background: linear-gradient(
+    var(--degree),
+    var(--color1) var(--percent1),
+    var(--color2) var(--percent2)
+  );
+}
+
+[data-dark-mode] {
+  --background: #303a52;
+}
 
 .App {
-  background: #303a52;
+  background: var(--background);
   color: white;
 }
