@@ -8,11 +8,11 @@ import Nav from "./comps/Nav";
 export default function Index() {
   const [state, send] = useNotes(urls.getData);
   const { view, id } = state;
-
+  console.log(state.listData);
   return (
     <div className="App">
       <Nav />
-      {view === "detail" ? (
+      {view === "detail" && state.listData ? (
         <NotePage id={id} state={state} send={send} />
       ) : (
         <NoteListPage state={state} send={send} />

@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import getData from "./arrayToObject";
-
+const updateWithData = (loading, data) => {
+  if (loading) {
+    const { text, mainText } = data;
+    return { text, mainText, loading: false };
+  }
+  return { text: null, mainText: null, loading: true };
+};
 export default function useObjectToArray(state, id) {
   const [text, setText] = useState(undefined);
   const { listData } = state;
@@ -9,5 +15,5 @@ export default function useObjectToArray(state, id) {
     setText(getData(listData, id)); // here we convert the array to an object
   }, [id, listData]);
 
-  return text;
+  return updateWithData(text !== undefined, text);
 }
